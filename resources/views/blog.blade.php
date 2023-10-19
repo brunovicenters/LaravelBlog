@@ -10,7 +10,7 @@
 
 <body>
     <article>
-        <h1>My First Post</h1>
+        <h1><a href="/posts/my-first-post">My First Post</a></h1>
 
         <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, molestiae nihil saepe error repudiandae ab praesentium tenetur itaque autem fuga. Veniam error non minima porro possimus, deserunt facere vel placeat?
@@ -20,7 +20,7 @@
     </article>
 
     <article>
-        <h1>My Second Post</h1>
+        <h1><a href="/posts/my-first-post">My Second Post</a></h1>
 
         <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, molestiae nihil saepe error repudiandae ab praesentium tenetur itaque autem fuga. Veniam error non minima porro possimus, deserunt facere vel placeat?
@@ -30,7 +30,7 @@
     </article>
 
     <article>
-        <h1>My Third Post</h1>
+        <h1><a href="/posts/my-first-post">My Third Post</a></h1>
 
         <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, molestiae nihil saepe error repudiandae ab praesentium tenetur itaque autem fuga. Veniam error non minima porro possimus, deserunt facere vel placeat?
