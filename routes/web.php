@@ -18,6 +18,15 @@ Route::get('/', function () {
 });
 
 
-Route::get('post', function () {
-    return view('post');
+Route::get('posts/{post}', function ($slug) {
+    $path = __DIR__ . "/../resources/posts/$slug.html";
+
+    if (file_exists($path)) {
+        $post = file_get_contents($path);
+        return view('post', [
+            'post' => $post,
+        ]);
+    } else {
+        return redirect('/');
+    }
 });
