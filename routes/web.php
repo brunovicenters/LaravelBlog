@@ -18,6 +18,6 @@ Route::get('/', function () {
 });
 
 
-Route::get('', function () {
+Route::get('post', function () {
     return view('post');
 });
