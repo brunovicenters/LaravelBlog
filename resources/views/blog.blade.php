@@ -9,35 +9,12 @@
 </head>
 
 <body>
-    <article>
-        <h1><a href="/posts/my-first-post">My First Post</a></h1>
+    <?php foreach ($posts as $post) : ?>
+        <article>
+            <?= $post; ?>
+        </article>
+    <?php endforeach; ?>
 
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, molestiae nihil saepe error repudiandae ab praesentium tenetur itaque autem fuga. Veniam error non minima porro possimus, deserunt facere vel placeat?
-            Consequatur debitis consectetur sapiente pariatur labore eligendi unde officiis, ducimus inventore nam explicabo totam accusamus atque dignissimos quam maxime natus quod tempora! Iure quod aperiam explicabo voluptates eos facere provident!
-            Totam, deleniti. Provident, fugit, iste obcaecati enim fuga ut, alias quos placeat architecto accusantium laudantium in unde? Quidem libero dicta veniam accusantium nam, temporibus commodi asperiores sunt voluptatem officia quod!
-        </p>
-    </article>
-
-    <article>
-        <h1><a href="/posts/my-first-post">My Second Post</a></h1>
-
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, molestiae nihil saepe error repudiandae ab praesentium tenetur itaque autem fuga. Veniam error non minima porro possimus, deserunt facere vel placeat?
-            Consequatur debitis consectetur sapiente pariatur labore eligendi unde officiis, ducimus inventore nam explicabo totam accusamus atque dignissimos quam maxime natus quod tempora! Iure quod aperiam explicabo voluptates eos facere provident!
-            Totam, deleniti. Provident, fugit, iste obcaecati enim fuga ut, alias quos placeat architecto accusantium laudantium in unde? Quidem libero dicta veniam accusantium nam, temporibus commodi asperiores sunt voluptatem officia quod!
-        </p>
-    </article>
-
-    <article>
-        <h1><a href="/posts/my-first-post">My Third Post</a></h1>
-
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, molestiae nihil saepe error repudiandae ab praesentium tenetur itaque autem fuga. Veniam error non minima porro possimus, deserunt facere vel placeat?
-            Consequatur debitis consectetur sapiente pariatur labore eligendi unde officiis, ducimus inventore nam explicabo totam accusamus atque dignissimos quam maxime natus quod tempora! Iure quod aperiam explicabo voluptates eos facere provident!
-            Totam, deleniti. Provident, fugit, iste obcaecati enim fuga ut, alias quos placeat architecto accusantium laudantium in unde? Quidem libero dicta veniam accusantium nam, temporibus commodi asperiores sunt voluptatem officia quod!
-        </p>
-    </article>
 </body>
 
 </html>
