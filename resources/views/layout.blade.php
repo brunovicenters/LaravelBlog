@@ -10,6 +10,10 @@
 
 <body>
 
+    <header>
+        @yield('banner')
+    </header>
+
     @yield('content')
 
 </body>
