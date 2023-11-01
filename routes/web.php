@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('blog', ['posts' => Post::all()]);
+    return view('blog', ['posts' => Post::with('category')->get()]);
 });
 
 
