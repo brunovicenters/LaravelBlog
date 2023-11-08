@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('blog', ['posts' => Post::latest()->with('category', 'author')->get()]);
+    return view('blog', ['posts' => Post::latest()->get()]);
 });
 
 
