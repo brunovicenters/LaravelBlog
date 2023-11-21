@@ -8,16 +8,9 @@
 
         {{-- Two Articles --}}
         <div class="lg:grid lg:grid-cols-2">
-            <x-post-card />
-            <x-post-card />
-        </div>
-
-        {{-- Three Articles --}}
-        <div class="lg:grid lg:grid-cols-3">
-          <x-post-card />
-          <x-post-card />
-          <x-post-card />
-        </div>
+            @foreach ($posts->skip(1) as $post)
+                <x-post-card :post="$post" />
+            @endforeach
     </main>
 </x-layout>
 
