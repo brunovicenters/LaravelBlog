@@ -22,7 +22,7 @@
       <div class="mt-4">
         <h2 class="text-3xl">
           <a
-            href="{{ $post->slug }}">
+            href="/posts/{{ $post->slug }}">
             {{ $post->title }}
           </a>
         </h2>
@@ -47,7 +47,7 @@
       </div>
       <div class="hidden lg:block">
         <a
-          href="{{ $post->slug }}"
+          href="/posts/{{ $post->slug }}"
           class="text-sm font-semibold bg-gray-200 rounded-full py-2 px-8">
           Read More
         </a>
