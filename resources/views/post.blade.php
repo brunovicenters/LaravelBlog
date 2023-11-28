@@ -6,19 +6,19 @@
             >
                 <div class="col-span-4 text-center">
                     <img
-                        src="images/illustration-1.png"
+                        src="/images/illustration-1.png"
                         alt="Blog Post illustration"
                         class="rounded-xl" 
                     />
                     <p class="mt-4 block text-gray-400 text-xs">
                         Published
-                        <time>1 day ago</time>
+                        <time>{{ $post->created_at->diffForHumans() }}</time>
                     </p>
                     <div class="flex items-center text-sm justify-center mt-4">
-                        <img src="images/lary-avatar.svg" alt="Lary avatar" />
+                        <img src="/images/lary-avatar.svg" alt="Lary avatar" />
                         <div class="ml-3 text-left">
-                            <h5 class="font-bold">Lary Laracore</h5>
-                            <h6>Mascot at Laracasts</h6>
+                            <h5 class="font-bold">{{ $post->author->name }}</h5>
+                            <h6>{{ $post->author->username }}</h6>
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                 <div class="col-span-8">
                     <div class="flex justify-between mb-6 -mt-10">
                         <a
-                            href="#"
+                            href="/"
                             class="transition-colors duration-200 text-lg relative inline-flex items-center hover:text-blue-500"
                         >
                             <svg class="mr-2" width="22" height="22" viewBox="0 0 22 22">
@@ -46,82 +46,14 @@
                             Back to posts
                         </a>
                         <div class="space-x-2">
-                            <a
-                                href="#"
-                                class="px-3 py-1 border border-blue-300 rounded-full text-blue-300 uppercase font-semibold"
-                                style="font-size: 10px"
-                            >
-                                Techniques
-                            </a>
-                            <a
-                                href="#"
-                                class="px-3 py-1 border border-red-300 rounded-full text-red-300 uppercase font-semibold"
-                                style="font-size: 10px"
-                            >
-                                Updates
-                            </a>
+                            <x-category-button :category="$post->category"/>        
                         </div>
                     </div>
                     <h1 class="font-bold text-4xl mb-10">
-                        This is a big title and it will look great on two or even three
-                        lines. Wooohoo!
+                        {{ $post->title }}
                     </h1>
                     <div class="space-y-4 text-lg">
-                        <p>
-                            &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Incidunt, cumque eius consectetur quia ad
-                            deserunt laborum. Reprehenderit, ipsam ipsum. Molestiae
-                            distinctio ab facilis doloremque voluptate culpa pariatur hic,
-                            perferendis aliquam!
-                        </p>
-                        <p>
-                            &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Incidunt, cumque eius consectetur quia ad
-                            deserunt laborum.
-                        </p>
-                        <p>
-                            &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Incidunt, cumque eius consectetur quia ad
-                            deserunt laborum. Reprehenderit, ipsam ipsum. Molestiae
-                            distinctio ab facilis doloremque voluptate culpa pariatur hic,
-                            perferendis aliquam!
-                        </p>
-                        <h2 class="font-bold text-lg py-3">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        </h2>
-                        <p>
-                            &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Incidunt, cumque eius consectetur quia ad
-                            deserunt laborum. Reprehenderit, ipsam ipsum. Molestiae
-                            distinctio ab facilis doloremque voluptate culpa pariatur hic,
-                            perferendis aliquam!
-                        </p>
-                        <p>
-                            &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Incidunt, cumque eius consectetur quia ad
-                            deserunt laborum. Reprehenderit, ipsam ipsum. Molestiae
-                            distinctio ab facilis doloremque voluptate culpa pariatur hic,
-                            perferendis aliquam!
-                        </p>
-                        <p>
-                            &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Incidunt, cumque eius consectetur quia ad
-                            deserunt laborum. Reprehenderit, ipsam ipsum. Molestiae
-                            distinctio ab facilis doloremque voluptate culpa pariatur hic,
-                            perferendis aliquam!
-                        </p>
-                        <p>
-                            &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Incidunt, cumque eius consectetur quia ad
-                            deserunt laborum.
-                        </p>
-                        <p>
-                            &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Incidunt, cumque eius consectetur quia ad
-                            deserunt laborum. Reprehenderit, ipsam ipsum. Molestiae
-                            distinctio ab facilis doloremque voluptate culpa pariatur hic,
-                            perferendis aliquam!
-                        </p>
+                           {{ $post->body }}
                     </div>
                 </div>
             </article>
