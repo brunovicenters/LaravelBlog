@@ -53,7 +53,7 @@
                         {{ $post->title }}
                     </h1>
                     <div class="space-y-4 text-lg">
-                        {{ $post->body }}
+                        {!! $post->body !!}
                     </div>
                 </div>
             </article>
