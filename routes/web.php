@@ -29,7 +29,10 @@ Route::get('posts/{post:slug}', function (Post $post) {
 });
 
 Route::get('categories/{category:slug}', function (Category $category) {
-    return view('blog', ['posts' => $category->posts]);
+    return view('blog', [
+        'posts' => $category->posts,
+        'categories' => Category::all(),
+    ]);
 });
 
 Route::get('authors/{author:username}', function (User $author) {
