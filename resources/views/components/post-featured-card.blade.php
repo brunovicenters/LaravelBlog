@@ -27,7 +27,7 @@
         </span>
       </div>
     </header>
-    <div class="text-sm mt-2">
+    <div class="text-sm mt-2 space-y-4">
       <p>
         {!! $post->excerpt !!}
       </p>
