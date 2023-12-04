@@ -74,7 +74,7 @@
               type="text"
               name="search"
               placeholder="Search..."
-              class="bg-transparent placeholder-black font-semibold text-sm" 
+              class="bg-transparent placeholder-black font-semibold text-sm pl-1" 
               value="{{ request('search') }}"
             />
           </form>
