@@ -19,9 +19,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PostsController::class, 'index'])->name('home');
 
 Route::get('posts/{post:slug}', [PostsController::class, 'show'])->name('post');
-
-Route::get('authors/{author:username}', function (User $author) {
-    return view('blog', [
-        'posts' => $author->posts,
-    ]);
-})->name('author');
