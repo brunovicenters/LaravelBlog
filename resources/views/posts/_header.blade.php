@@ -44,7 +44,10 @@
         </div> --}}
         <!-- Search -->
         <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl px-3 py-2">
-          <form action="#" method="GET">
+          <form action="/" method="GET">
+            @if (request('category'))
+              <input type="hidden" name="category" value="{{ request('category') }}">
+            @endif
             <input
               type="text"
               name="search"
