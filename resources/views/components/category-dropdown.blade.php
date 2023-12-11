@@ -7,19 +7,26 @@
         </button>
     </x-slot>
 
+    @php     
+        $active = request('category') ? false : true;
+    @endphp 
+
     <x-dropdown-item 
         href="/"
-        :active="request()->routeIs('home')"
+        :active="$active"
     >
         All
     </x-dropdown-item>
 
     @foreach ($categories as $category)
+        @php     
+            $active = (request('category') == $category->slug) ? true : false;
+        @endphp
         <x-dropdown-item 
         href="/?category={{ $category->slug }}"
-        :active='request()->is("categories/$category->slug")'
+        :active="$active"
         >
-        {{ ucwords($category->name) }}
+            {{ ucwords($category->name) }}
         </x-dropdown-item>
         
     @endforeach
