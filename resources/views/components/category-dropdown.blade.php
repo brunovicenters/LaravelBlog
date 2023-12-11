@@ -23,7 +23,7 @@
             $active = (request('category') == $category->slug) ? true : false;
         @endphp
         <x-dropdown-item 
-        href="/?category={{ $category->slug }}"
+        href="/?category={{ $category->slug }}&{{ http_build_query(request()->except('category')) }}"
         :active="$active"
         >
             {{ ucwords($category->name) }}
