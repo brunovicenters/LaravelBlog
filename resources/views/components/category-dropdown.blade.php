@@ -12,7 +12,7 @@
     @endphp 
 
     <x-dropdown-item 
-        href="/"
+        href="/?{{ http_build_query(request()->except('category', 'page')) }}"
         :active="$active"
     >
         All
@@ -23,7 +23,7 @@
             $active = (request('category') == $category->slug) ? true : false;
         @endphp
         <x-dropdown-item 
-        href="/?category={{ $category->slug }}&{{ http_build_query(request()->except('category')) }}"
+        href="/?category={{ $category->slug }}&{{ http_build_query(request()->except('category', 'page')) }}"
         :active="$active"
         >
             {{ ucwords($category->name) }}
