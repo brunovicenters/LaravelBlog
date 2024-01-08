@@ -28,8 +28,23 @@
               height="16" />
           </a>
         </div>
-        <div class="mt-8 lg:mt-0">
-          <a href="/register" class="text-xs font-bold uppercase">Register</a>
+        <div class="mt-8 lg:mt-0 flex items-center">
+          @guest
+
+            <a href="/register" class="text-xs font-bold uppercase">Register</a>
+
+            <a href="/login" class="mx-4 text-xs font-bold uppercase">Log In</a>
+
+          @else
+
+            <span class="text-xs font-bold uppercase">Welcome, {{ auth()->user()->name }}</span>
+
+            <form action="/logout" method="POST" class="text-xs text-blue-500 mx-4">
+              @csrf
+              <button type="submit" class="font-semibold uppercase">Log Out</button>
+            </form>
+
+          @endguest
           <a
             href="#"
             class="transition-colors duration-200 bg-blue-500 hover:bg-blue-600 ml-3 rounded-full text-xs font-semibold text-white px-5 py-3 uppercase">
