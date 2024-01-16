@@ -93,8 +93,8 @@
                             <x-post-comment :comment="$comment" />
                         @endforeach 
                     @else
-                        <x-panel>
-                            <article class="flex bg-gray-100 space-x-4">
+                        <x-panel class="bg-gray-100">
+                            <article class="flex space-x-4">
                                 No comments yet!
                             </article>
                         </x-panel>
