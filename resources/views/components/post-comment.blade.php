@@ -9,7 +9,7 @@
         <header class="mb-4">
             <h3 class="font-bold">{{ $comment->author->name }}</h3>
 
-            <p class="text-xs text-gray-400 text-semibold">{{ $comment->author->username }}</p>
+            <p class="text-xs text-gray-400 font-semibold">{{ $comment->author->username }}</p>
             <p class="text-xs text-gray-400">Posted <time>{{ $comment->created_at->diffForHumans() }}</time></p>
         </header>
 
