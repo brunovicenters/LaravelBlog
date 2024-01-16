@@ -59,11 +59,15 @@
 
                 {{-- Comments --}}
                 <section class="col-span-8 col-start-5 mt-10 space-y-6">
-                    <x-post-comment />
-                    <x-post-comment />
-                    <x-post-comment />
-                    <x-post-comment />
-                    <x-post-comment />
+                    @if (count($comments) > 0)
+                        @foreach ($comments as $comment) 
+                            <x-post-comment :comment="$comment" />
+                        @endforeach 
+                    @else
+                        <article class="flex bg-gray-100 border border-gray-200 p-6 rounded-xl space-x-4">
+                            No comments yet!
+                        </article>
+                    @endif
                 </section>
             </article>
         </main>
