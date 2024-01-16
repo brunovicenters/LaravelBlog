@@ -74,7 +74,7 @@
                     @enderror
                 </div>
 
-                <div class="mb-6">
+                <div class="mb-4 flex justify-between items-center">
                     <button
                         type="submit"
                         class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500"
@@ -82,6 +82,7 @@
                         Submit
                     </button>
                     
+                    <p class="text-sm">Already has an account? <a href="/login" class="text-blue-500 hover:underline">Log in</a></p>
                 </div>
 
             </form>
