@@ -60,9 +60,9 @@
                 {{-- Comments --}}
                 <section class="col-span-8 col-start-5 mt-10 space-y-6">
 
-                    @if (auth()->id())
-                        <x-panel>
-                            <form action="#" method="POST">
+                    <x-panel>
+                        @if (auth()->id())
+                            <form action="/posts/{{ $post->slug }}/comments" method="POST">
 
                                 @csrf
 
@@ -72,21 +72,19 @@
                                 </header>
 
                                 <div class="mt-4">
-                                    <textarea name="body" placeholder="Write your comment..." class="w-full p-1 text-sm" rows="3"></textarea>
+                                    <textarea name="body" placeholder="Write your comment..." class="w-full p-1 text-sm" rows="3" required></textarea>
                                 </div>
 
                                 <div class="flex justify-end mt-2 border-t border-gray-200 pt-6">
                                     <button type="submit" class="bg-blue-500 text-white uppercase font-semibold text-xs py-2 px-5 rounded-2xl hover:bg-blue-600">Post</button>
                                 </div>
                             </form>
-                        </x-panel>
-                    @else
-                        <x-panel>
-                                <header class="flex">
-                                    <h2>Want to leave an opinion? <a href="/login" class="text-blue-500 hover:underline">Log in</a></h2>
-                                </header>
-                        </x-panel>
-                    @endif
+                        @else
+                            <header class="flex">
+                                <h2>Want to leave an opinion? <a href="/login" class="text-blue-500 hover:underline">Log in</a></h2>
+                            </header>
+                        @endif
+                    </x-panel>
 
                     
 
