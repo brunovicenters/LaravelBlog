@@ -40,14 +40,14 @@
                     @enderror
                 </div>
 
-                <div class="mb-6">
+                <div class="mb-4 flex justify-between items-center">
                     <button
                         type="submit"
                         class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500"
                     >
                         Log In
                     </button>
-                    
+                    <p class="text-sm">Doesn't have an account? <a href="/register" class="text-blue-500 hover:underline">Register</a></p>
                 </div>
 
             </form>
