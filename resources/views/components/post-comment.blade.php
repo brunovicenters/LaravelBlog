@@ -11,7 +11,7 @@
                 <h3 class="font-bold">{{ $comment->author->name }}</h3>
                 
                 <p class="text-xs text-gray-400 font-semibold">{{ $comment->author->username }}</p>
-                <p class="text-xs text-gray-400">Posted <time>{{ $comment->created_at->diffForHumans() }}</time></p>
+                <p class="text-xs text-gray-400">Posted <time>{{ $comment->created_at->format('F j, Y, g:i a') }}</time></p>
             </header>
             
             <p>
