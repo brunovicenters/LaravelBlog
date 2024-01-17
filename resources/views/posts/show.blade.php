@@ -67,7 +67,13 @@
                                 @csrf
 
                                 <header class="flex items-center space-x-4">
-                                    <img src="https://i.pravatar.cc/60?u={{ auth()->id() }}" alt="Profile image" width="40" height="40" class="rounded-full">
+                                    <img 
+                                        src="https://i.pravatar.cc/60?u={{ auth()->id() }}" 
+                                        alt="Profile image" 
+                                        width="40" 
+                                        height="40" 
+                                        class="rounded-full">
+                                        
                                     <h2 class="font-bold">What do you think about it?</h2>
                                 </header>
 
