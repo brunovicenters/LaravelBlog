@@ -14,6 +14,7 @@
       rel="stylesheet" 
     />
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="styles/app.css">
     <title>Laravel From Scratch Blog</title>
   </head>
   <body style="font-family: Open Sans, sans-serif">
@@ -46,7 +47,7 @@
 
           @endguest
           <a
-            href="#"
+            href="#newsletter"
             class="transition-colors duration-200 bg-blue-500 hover:bg-blue-600 ml-3 rounded-full text-xs font-semibold text-white px-5 py-3 uppercase">
             Subscribe for Updates
           </a>
@@ -56,6 +57,7 @@
       {{ $slot }}
 
       <footer
+        id="newsletter"
         class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
         <img
           src="/images/lary-newsletter-icon.png"
