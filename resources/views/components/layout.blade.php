@@ -70,13 +70,17 @@
         <div class="mt-10">
           <div
             class="relative inline-block mx-auto lg:bg-gray-200 rounded-full">
-            <form action="#" method="POST" class="lg:flex text-sm">
+
+            <form action="/newsletter" method="POST" class="lg:flex text-sm">
+              @csrf
+
               <div class="lg:py-3 lg:px-5 flex items-center">
                 <label for="email" class="hidden lg:inline-block">
                   <img src="/images/mailbox-icon.svg" alt="Mailbox icon" />
                 </label>
+
                 <input
-                  type="text"
+                  type="email"
                   placeholder="Your.email@address.com"
                   class="lg:bg-transparent pl-4 focus-within:outline-none"
                   id="email"
