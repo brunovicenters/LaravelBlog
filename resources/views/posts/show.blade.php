@@ -6,7 +6,7 @@
             >
                 <div class="col-span-4 text-center">
                     <img
-                        src="/images/illustration-1.png"
+                        src="/storage/{{ $post->thumbnail }}"
                         alt="Blog Post illustration"
                         class="rounded-xl" 
                     />
