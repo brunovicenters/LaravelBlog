@@ -8,16 +8,22 @@ use App\Models\Category;
 
 class PostsController extends Controller
 {
-    public function index(){   
-
+    public function index()
+    {
         return view('posts.index', [
             'posts' => Post::latest()->filter(
-                request(['search','category', 'author'])
+                request(['search', 'category', 'author'])
             )->paginate(6)->withQueryString(),
         ]);
     }
 
-    public function show(Post $post){
+    public function show(Post $post)
+    {
         return view('posts.show', ['post' => $post, 'comments' => $post->comments]);
+    }
+
+    public function create()
+    {
+        return view('posts.create');
     }
 }
