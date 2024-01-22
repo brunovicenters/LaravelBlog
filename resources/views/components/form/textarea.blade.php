@@ -10,5 +10,5 @@
         required
     >{{ old($name) }}</textarea>
 
-    <x-form.error :name="{{$name}}" />
+    <x-form.error name="{{$name}}" />
 </x-form.field>
