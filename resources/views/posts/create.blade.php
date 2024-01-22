@@ -21,8 +21,8 @@
 
                 <x-form.textarea name="body" />
 
-                <div class="mb-6">
-                    <label for="category_id" class="block mb-2 uppercase font-bold text-gray-700">Category</label>
+                <x-form.field>
+                    <x-form.label name="category" />
 
                     <select name="category_id" id="category_id">
                         @foreach (\App\Models\Category::all() as $category)
@@ -34,13 +34,13 @@
                             </option>
                         @endforeach
                     </select>
+
+                    <x-form.error name="category_id" />
+                </x-form.field>
     
-                    @error('category_id')
-                        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                    @enderror
-                </div>
-    
-                <x-submit-button>Publish</x-submit-button>
+                <x-form.field>
+                    <x-form.button>Publish</x-form.button>
+                </x-form.field>
             </form>
         </x-panel>
     </section>
