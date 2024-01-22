@@ -11,53 +11,11 @@
             <form action="/admin/posts" method="POST" enctype="multipart/form-data">
                 @csrf
     
-                <div class="mb-6">
-                    <label for="title" class="block mb-2 uppercase font-bold text-gray-700">Title</label>
-                    <input
-                        type="text"
-                        class="border border-gray-400 p-2 w-full"
-                        name="title"
-                        id="title"
-                        placeholder="Post's title"
-                        value="{{ old('title') }}"
-                        required
-                    />
-    
-                    @error('title')
-                        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                    @enderror
-                </div>
+                <x-form.input name="title" />
 
-                <div class="mb-6">
-                    <label for="slug" class="block mb-2 uppercase font-bold text-gray-700">Slug</label>
-                    <input
-                        type="text"
-                        class="border border-gray-400 p-2 w-full"
-                        name="slug"
-                        id="slug"
-                        placeholder="Post's slug"
-                        value="{{ old('slug') }}"
-                        required
-                    />
-    
-                    @error('slug')
-                        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                    @enderror
-                </div>
+                <x-form.input name="slug" />
 
-                <div class="mb-6">
-                    <label for="thumbnail"
-                        class="block mb-2 uppercase font-bold text-gray-700">
-                        Thumbnail
-                    </label>
-                    <input
-                        type="file"
-                        class="border border-gray-400 p-2 w-full"
-                        name="thumbnail"
-                        id="thumbnail"
-                        required
-                        />
-                </div>
+                <x-form.input name="thumbnail" type="file" />
 
                 <div class="mb-6">
                     <label for="excerpt" class="block mb-2 uppercase font-bold text-gray-700">Excerpt</label>
