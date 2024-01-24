@@ -55,6 +55,10 @@
                 New Category
               </x-dropdown-item>
 
+              <x-dropdown-item href="/admin/create" :active="request()->is('admin/create')">
+                New Admin
+              </x-dropdown-item>
+
               <x-dropdown-item href="/admin/config" :active="request()->is('admin/config')">
                 Configuration
               </x-dropdown-item>
