@@ -4,14 +4,14 @@
     <div class="py-6 px-5">
       <div>
         <img
-          src="/storage/{{ $post->thumbnail }}"
+          src="{{($post->thumbnail) ? "/storage/{$post->thumbnail}" : "/images/default.png"}}"
           alt="Blog Post illustration"
           class="rounded-xl" />
       </div>
       <div class="mt-8 flex flex-col justify-between">
         <header>
           <div class="space-x-2">
-            <x-category-button :category="$post->category"/>  
+            <x-category-button :category="$post->category"/>
           </div>
           <div class="mt-4">
             <h2 class="text-3xl">

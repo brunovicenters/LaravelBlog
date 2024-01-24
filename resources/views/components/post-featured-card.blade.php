@@ -4,7 +4,7 @@
 <div class="py-6 px-5 lg:flex lg:gap-8">
   <div class="flex-1 lg:mr-8">
     <img
-      src="/storage/{{ $post->thumbnail }}"
+      src="{{($post->thumbnail) ? "/storage/{$post->thumbnail}" : "/images/default.png"}}"
       alt="Blog Post illustration"
       class="rounded-xl" />
   </div>
