@@ -1,4 +1,4 @@
-@props(['name', 'type' => 'text', 'placeholder' => ''])
+@props(['name', 'type' => 'text', 'placeholder' => '', 'autocomplete' => false])
 
 <x-form.field>
     <x-form.label name="{{ $name }}" />
@@ -9,6 +9,9 @@
         id="{{ $name }}"
         placeholder="{{ $placeholder }}"
         value="{{ old($name) }}"
+        @if ($autocomplete)
+            autocomplete="{{ $autocomplete }}"
+        @endif
         required
     />
 
