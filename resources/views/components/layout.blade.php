@@ -43,7 +43,7 @@
                 <button class="text-xs font-bold uppercase hover:text-blue-500">Welcome, {{ auth()->user()->name }}</button>
               </x-slot>
 
-              <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/dashboard')">
+              <x-dropdown-item href="/admin/dashboard" :active="request()->is('admin/dashboard')">
                 Dashboard
               </x-dropdown-item>
 
