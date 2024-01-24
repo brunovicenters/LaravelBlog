@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\PostCommentsController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\RegisterController;
@@ -22,5 +23,6 @@ Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
+Route::get('admin/dashboard', [AdminPostController::class, 'index'])->middleware('admin');
 Route::get('admin/posts/create', [PostsController::class, 'create'])->middleware('admin');
 Route::post('admin/posts', [PostsController::class, 'store'])->middleware('admin');
