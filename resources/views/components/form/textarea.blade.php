@@ -1,4 +1,4 @@
-@props(['name', 'placeholder' => ''])
+@props(['name'])
 
 <x-form.field>
     <x-form.label name="{{ $name }}" />
@@ -6,7 +6,7 @@
         class="border border-gray-400 p-2 w-full rounded"
         name="{{ $name }}"
         id="{{ $name }}"
-        placeholder="{{ $placeholder }}"
+        {{ $attributes }}
         required
     >{{ old($name) }}</textarea>
 
