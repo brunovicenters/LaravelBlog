@@ -1,4 +1,4 @@
-@props(['name', 'type' => 'text'])
+@props(['name', 'type' => 'text', 'placeholder' => ''])
 
 <x-form.field>
     <x-form.label name="{{ $name }}" />
@@ -7,7 +7,7 @@
         class="border border-gray-400 p-2 w-full rounded"
         name="{{ $name }}"
         id="{{ $name }}"
-        placeholder="Post's {{ $name }}"
+        placeholder="{{ $placeholder }}"
         value="{{ old($name) }}"
         required
     />
