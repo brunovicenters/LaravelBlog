@@ -24,7 +24,7 @@
           <a href="/">
             <img
               src="/images/logo.svg"
-              alt="Laracasts Logo"
+              alt="Laracast's Logo"
               width="165"
               height="16" />
           </a>
@@ -38,12 +38,36 @@
 
           @else
 
-            <span class="text-xs font-bold uppercase">Welcome, {{ auth()->user()->name }}</span>
+            <x-dropdown>
+              <x-slot name="trigger">
+                <button class="text-xs font-bold uppercase hover:text-blue-500">Welcome, {{ auth()->user()->name }}</button>
+              </x-slot>
 
-            <form action="/logout" method="POST" class="text-xs text-blue-500 mx-4">
-              @csrf
-              <button type="submit" class="font-semibold uppercase">Log Out</button>
-            </form>
+              <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/dashboard')">
+                Dashboard
+              </x-dropdown-item>
+
+              <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">
+                New Post
+              </x-dropdown-item>
+
+              <x-dropdown-item href="/admin/category/create" :active="request()->is('admin/category/create')">
+                New Category
+              </x-dropdown-item>
+
+              <x-dropdown-item href="/admin/config" :active="request()->is('admin/config')">
+                Configuration
+              </x-dropdown-item>
+
+              <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()">
+                Log Out
+              </x-dropdown-item>
+
+              <form id="logout-form" action="/logout" method="POST" class="hidden">
+                @csrf
+              </form>
+            </x-dropdown>
+
 
           @endguest
           <a
