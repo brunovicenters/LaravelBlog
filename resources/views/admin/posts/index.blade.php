@@ -1,6 +1,6 @@
 <x-layout>
     <x-setting heading="Manage Posts">
-        <div class="flex flex-col">
+        <div class="flex flex-col max-w-2xl ">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                     <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -16,12 +16,15 @@
                                     <th scope="col" class="relative px-6 py-3">
                                         <span class="sr-only">Edit</span>
                                     </th>
+                                    <th scope="col" class="relative px-6 py-3">
+                                        <span class="sr-only">Delete</span>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
                                 @foreach ($posts as $post)
                                     <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">
+                                        <td class="px-6 py-4 whitespace-nowrap max-w-sm">
                                             <div class="flex items-center">
                                                 <div class="flex-shrink-0 h-10 w-10">
                                                     <img class="h-10 w-10 rounded-full"
@@ -29,8 +32,9 @@
                                                         alt="Post thumbnail">
                                                 </div>
                                                 <div class="ml-4">
-                                                    <div class="text-sm font-medium text-gray-900">
+                                                    <div class="text-sm font-medium text-gray-900 truncate max-w-xs">
                                                         <a
+                                                            class="hover:underline"
                                                             href="/posts/{{ $post->slug }}">
                                                             {{ $post->title }}
                                                         </a>
@@ -48,6 +52,13 @@
                                                 href="/admin/posts/{{ $post->id }}/edit"
                                                 class="text-blue-500 hover:text-blue-600">
                                                 Edit
+                                            </a>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                            <a
+                                                href="/admin/posts/{{ $post->id }}/edit"
+                                                class="text-red-500 hover:text-blue-600">
+                                                Delete
                                             </a>
                                         </td>
                                     </tr>
