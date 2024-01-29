@@ -55,11 +55,16 @@
                                             </a>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                            <a
-                                                href="/admin/posts/{{ $post->id }}/edit"
-                                                class="text-red-500 hover:text-blue-600">
-                                                Delete
-                                            </a>
+                                            <form action="/admin/posts/{{ $post->id }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button
+                                                    class="text-red-500 hover:text-red-600"
+                                                    onclick="return confirm('Are you sure?')"
+                                                >
+                                                    Delete
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
