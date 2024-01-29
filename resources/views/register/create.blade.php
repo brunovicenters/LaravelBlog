@@ -8,13 +8,13 @@
                 <form action="/register" method="POST" class="mt-10">
                     @csrf
                     
-                    <x-form.input name="name" placeholder="Your name" />
+                    <x-form.input name="name" placeholder="Your name" required />
                     
-                    <x-form.input name="username" placeholder="Your username" />
+                    <x-form.input name="username" placeholder="Your username" required />
                     
-                    <x-form.input name="email" type="email" placeholder="Your@email.com" />
+                    <x-form.input name="email" type="email" placeholder="Your@email.com" required />
                     
-                    <x-form.input name="password" type="password" placeholder="Your password" autocomplete="new-password" />
+                    <x-form.input name="password" type="password" placeholder="Your password" autocomplete="new-password" required />
                     
                     <div class="mb-4 mt-6 flex justify-between items-center">
                         <x-form.button>Register</x-button>
