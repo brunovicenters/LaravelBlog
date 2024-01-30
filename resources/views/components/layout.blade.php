@@ -43,21 +43,23 @@
                 <button class="text-xs font-bold uppercase hover:text-blue-500">Welcome, {{ auth()->user()->name }}</button>
               </x-slot>
 
-              <x-dropdown-item href="/admin/dashboard" :active="request()->is('admin/dashboard')">
-                Dashboard
-              </x-dropdown-item>
-
-              <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">
-                New Post
-              </x-dropdown-item>
-
-              <x-dropdown-item href="/admin/category/create" :active="request()->is('admin/category/create')">
-                New Category
-              </x-dropdown-item>
-
-              <x-dropdown-item href="/admin/create" :active="request()->is('admin/create')">
-                New Admin
-              </x-dropdown-item>
+              @can('admin')
+                <x-dropdown-item href="/admin/dashboard" :active="request()->is('admin/dashboard')">
+                  Dashboard
+                </x-dropdown-item>
+                
+                <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">
+                  New Post
+                </x-dropdown-item>
+                
+                <x-dropdown-item href="/admin/category/create" :active="request()->is('admin/category/create')">
+                  New Category
+                </x-dropdown-item>
+                
+                <x-dropdown-item href="/admin/create" :active="request()->is('admin/create')">
+                  New Admin
+                </x-dropdown-item>
+              @endcan
 
               <x-dropdown-item href="/admin/config" :active="request()->is('admin/config')">
                 Configuration
