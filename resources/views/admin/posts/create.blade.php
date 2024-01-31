@@ -5,8 +5,6 @@
 
             <x-form.input name="title" placeholder="Post's title" required />
 
-            <x-form.input name="slug" placeholder="Post's slug" required />
-
             <x-form.input name="thumbnail" type="file" required />
 
             <x-form.textarea name="excerpt" placeholder="Post's excerpt" />

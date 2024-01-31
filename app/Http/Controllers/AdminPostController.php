@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Str;
 use App\Models\Category;
 
 class AdminPostController extends Controller
@@ -64,13 +65,17 @@ class AdminPostController extends Controller
     {
         $post ??= new Post();
 
-        return request()->validate([
-            'title' => 'required',
+        $attributes = request()->validate([
+            'title' => ['required', Rule::unique('posts', 'title')->ignore($post->id)],
             'thumbnail' => $post->exists() ? ['image'] : ['required', 'image'],
-            'slug' => ['required', Rule::unique('posts', 'slug')->ignore($post->id)],
+            // 'slug' => ['required', Rule::unique('posts', 'slug')->ignore($post->id)],
             'excerpt' => 'required',
             'body' => 'required',
             'category_id' => ['required', Rule::exists('categories', 'id')],
         ]);
+
+        $attributes['slug'] = Str::slug($attributes['title'], '-');
+
+        return $attributes;
     }
 }

@@ -6,8 +6,6 @@
 
             <x-form.input name="title" placeholder="Post's title" :value="old('title', $post->title)" required/>
 
-            <x-form.input name="slug" placeholder="Post's slug" :value="old('slug', $post->slug)" required />
-
             <div class="flex mt-6">
                 <div class="flex-1">
                     <x-form.input name="thumbnail" type="file" :value="old('thumbnail', $post->thumbnail)" />
