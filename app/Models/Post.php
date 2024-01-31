@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\HtmlString;
 
 class Post extends Model
 {
@@ -24,28 +25,45 @@ class Post extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class)
-                        ->latest();
+            ->latest();
     }
 
-    public function scopeFilter($query, array $filters){
-        $query->when($filters['search'] ?? false, fn ($query, $search) =>
+    public function getBodyAttribute($value)
+    {
+        return new HtmlString('<p>' . nl2br(e($value)) . '</p>');
+    }
+
+    public function scopeFilter($query, array $filters)
+    {
+        $query->when(
+            $filters['search'] ?? false,
+            fn ($query, $search) =>
             $query
-                ->where(fn($query)=>
-                $query->where('title', 'like', "%$search%")
-                      ->orWhere('body', 'like', "%$search%")
-            )
+                ->where(
+                    fn ($query) =>
+                    $query->where('title', 'like', "%$search%")
+                        ->orWhere('body', 'like', "%$search%")
+                )
         );
-        
-        $query->when($filters['category'] ?? false, fn ($query, $category) =>
+
+        $query->when(
+            $filters['category'] ?? false,
+            fn ($query, $category) =>
             $query
-                ->whereHas('category', fn ($query) => 
+                ->whereHas(
+                    'category',
+                    fn ($query) =>
                     $query->where('slug', $category)
                 )
         );
-        
-        $query->when($filters['author'] ?? false, fn ($query, $author) =>
+
+        $query->when(
+            $filters['author'] ?? false,
+            fn ($query, $author) =>
             $query
-                ->whereHas('author', fn ($query) => 
+                ->whereHas(
+                    'author',
+                    fn ($query) =>
                     $query->where('username', $author)
                 )
         );
