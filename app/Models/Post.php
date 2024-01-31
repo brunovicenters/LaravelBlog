@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\HtmlString;
 
 class Post extends Model
@@ -28,8 +29,21 @@ class Post extends Model
             ->latest();
     }
 
+    public function getExcerptAttribute($value)
+    {
+        if (Request::get('edit')) {
+            return $value;
+        }
+
+        return new HtmlString('<p>' . nl2br(e($value)) . '</p>');
+    }
+
     public function getBodyAttribute($value)
     {
+        if (Request::get('edit')) {
+            return $value;
+        }
+
         return new HtmlString('<p>' . nl2br(e($value)) . '</p>');
     }
 

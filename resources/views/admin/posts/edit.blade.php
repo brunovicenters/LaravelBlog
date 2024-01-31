@@ -23,7 +23,7 @@
             </x-form.textarea>
 
             <x-form.textarea name="body" placeholder="Post's body" >
-                {{ old('excerpt', $post->excerpt) }}
+                {{ old('body', $post->body) }}
             </x-form.textarea>
 
             <x-form.field>
