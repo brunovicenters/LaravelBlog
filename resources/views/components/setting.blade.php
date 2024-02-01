@@ -19,10 +19,10 @@
                     <a href="/admin/posts/create" class="{{ request()->is('admin/posts/create') ? 'text-blue-500' : '' }}">New Post</a>
                 </li>
                 <li>
-                    <a href="/admin/category/create" class="{{ request()->is('admin/category/create') ? 'text-blue-500' : '' }}">New Category</a>
+                    <a href="/admin/categories/create" class="{{ request()->is('admin/categories/create') ? 'text-blue-500' : '' }}">New Category</a>
                 </li>
                 <li>
-                    <a href="/admin/create" class="{{ request()->is('admin/create') ? 'text-blue-500' : '' }}">New Admin</a>
+                    <a href="/admin/users/create" class="{{ request()->is('admin/users/create') ? 'text-blue-500' : '' }}">New Admin</a>
                 </li>
 
             </ul>

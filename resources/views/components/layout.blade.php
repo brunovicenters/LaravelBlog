@@ -52,11 +52,11 @@
                   New Post
                 </x-dropdown-item>
                 
-                <x-dropdown-item href="/admin/category/create" :active="request()->is('admin/category/create')">
+                <x-dropdown-item href="/admin/categories/create" :active="request()->is('admin/categories/create')">
                   New Category
                 </x-dropdown-item>
                 
-                <x-dropdown-item href="/admin/create" :active="request()->is('admin/create')">
+                <x-dropdown-item href="/admin/users/create" :active="request()->is('admin/users/create')">
                   New Admin
                 </x-dropdown-item>
               @endcan
