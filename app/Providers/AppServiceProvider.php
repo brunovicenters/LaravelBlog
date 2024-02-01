@@ -36,8 +36,12 @@ class AppServiceProvider extends ServiceProvider
     {
         Model::unguard();
 
+        Gate::define('author', function (User $user) {
+            return $user->entity === 1 || $user->entity === 2;
+        });
+
         Gate::define('admin', function (User $user) {
-            return $user->is_admin === 1;
+            return $user->entity === 2;
         });
     }
 }

@@ -24,7 +24,7 @@ Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
 // Admin Section
-Route::middleware('can:admin')->group(function () {
+Route::middleware('can:author')->group(function () {
     Route::resource('admin/posts', AdminPostController::class)->except('show');
 
     // Route::get('admin/posts', [AdminPostController::class, 'index']);

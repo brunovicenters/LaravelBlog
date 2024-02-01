@@ -43,7 +43,7 @@
                 <button class="text-xs font-bold uppercase hover:text-blue-500">Welcome, {{ auth()->user()->name }}</button>
               </x-slot>
 
-              @can('admin')
+              @can('author')
                 <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')">
                   Dashboard
                 </x-dropdown-item>
