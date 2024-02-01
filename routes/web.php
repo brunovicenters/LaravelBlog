@@ -38,5 +38,6 @@ Route::middleware('can:author')->group(function () {
 
 Route::middleware('can:author')->group(function () {
     Route::get('admin/categories', [AdminCategoryController::class, 'index']);
+    Route::post('admin/categories', [AdminCategoryController::class, 'store']);
     Route::get('admin/categories/create', [AdminCategoryController::class, 'create']);
 });
