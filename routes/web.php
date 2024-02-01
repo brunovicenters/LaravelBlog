@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\PostCommentsController;
 use App\Http\Controllers\PostsController;
@@ -33,4 +34,9 @@ Route::middleware('can:author')->group(function () {
     // Route::get('admin/posts/{post}/edit', [AdminPostController::class, 'edit']);
     // Route::patch('admin/posts/{post}', [AdminPostController::class, 'update']);
     // Route::delete('admin/posts/{post}', [AdminPostController::class, 'destroy']);
+});
+
+Route::middleware('can:author')->group(function () {
+    Route::get('admin/categories', [AdminCategoryController::class, 'index']);
+    Route::get('admin/categories/create', [AdminCategoryController::class, 'create']);
 });
