@@ -6,7 +6,7 @@
         <img
           src="{{($post->thumbnail) ? "/storage/{$post->thumbnail}" : "/images/default.png"}}"
           alt="Blog Post illustration"
-          class="rounded-xl" />
+          class="rounded-xl w-full h-80 object-cover" />
       </div>
       <div class="mt-8 flex flex-col justify-between">
         <header>
@@ -17,7 +17,7 @@
             <h2 class="text-3xl">
               <a href="/posts/{{ $post->slug }}">
                 {{ $post->title }}
-              </a> 
+              </a>
             </h2>
             <span class="mt-2 block text-gray-400 text-xs">
               Published
